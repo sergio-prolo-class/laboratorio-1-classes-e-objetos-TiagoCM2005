@@ -4,11 +4,72 @@
 package ifsc.poo;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
+    
+    static void lampadas(){
+        Lampada luz = new Lampada();
+        Lampada led = new Lampada();
+
+        led.light_off();
+        luz.light_on();
+
+
+        boolean led1 = led.verEstado();
+        if(led1){
+            System.out.println("Está ligada!");
+            } else{
+            System.out.println("Está desligada!");
+        }
+        
+        boolean lampada = luz.verEstado();
+            if(lampada){
+                System.out.println("Está ligada!");
+                } else{
+                System.out.println("Está desligada!");
+            }
+        }
+
+        static void pessoas(){
+            Pessoa fulano = new Pessoa();
+            Pessoa ciclano = new Pessoa();
+
+            fulano.Setnome("Bruno");
+            fulano.setIdade(25);
+
+            ciclano.Setnome("Alice");
+            ciclano.setIdade(22);
+
+            for(int i = 0; i < 3; i++){
+            fulano.felizAniversario();
+            }
+
+            System.out.println(fulano.getIdade());
+            
+            System.out.println(ciclano.getIdade());
+
+            // Não é possível colocar um nome vazio ou uma idade negativa, pois foi feito os testes;
+
+        }
+        static void retangulo(){
+            Retangulo caixa = new Retangulo();
+
+            caixa.setLargura(5);
+            caixa.setAltura(4);
+
+            System.out.println(caixa.getArea());
+            System.out.println(caixa.getPerimetro());
+
+
+        }
+    
+    public static void main(String[] args) {
+
+        pessoas();
+        lampadas();
+        retangulo();
+
+
+
+
+        }
     }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
-    }
-}
