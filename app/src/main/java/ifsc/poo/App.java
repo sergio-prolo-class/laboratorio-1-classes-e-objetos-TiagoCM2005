@@ -3,6 +3,8 @@
  */
 package ifsc.poo;
 
+import java.util.Random;
+
 public class App {
     
     static void lampadas(){
@@ -50,23 +52,89 @@ public class App {
 
         }
         static void retangulo(){
+            int linha = 10;
             Retangulo caixa = new Retangulo();
+            Retangulo caixao = new Retangulo();
 
-            caixa.setLargura(5);
+            Random rnd = new Random();
+            int[][] dimensao = new int[linha][2];
+
+            for(int i = 0; i < linha; i++){
+                dimensao[i][0] = rnd.nextInt(100) + 1;
+                dimensao[i][1] = rnd.nextInt(100) + 1;
+                caixao.setLargura(dimensao[i][0]); 
+                caixao.setAltura(dimensao[i][1]);
+                System.out.println("Retangulo " + (i + 1));
+                System.out.println("Área: " + caixao.getArea());
+                System.out.println("Perímetro: " + caixao.getPerimetro()); 
+                System.out.println();
+            }
+            
+            System.out.println("Retangulo fixo");
+            caixa.setLargura(5); 
             caixa.setAltura(4);
 
-            System.out.println(caixa.getArea());
-            System.out.println(caixa.getPerimetro());
+            System.out.println(caixa.getArea()); // área igual a 20
+            System.out.println(caixa.getPerimetro()); // Perímetro 
+
+           
 
 
         }
-    
+
+        static void relogio(){
+            Relogio clock = new Relogio();
+            Relogio clock1 = new Relogio();
+
+            clock.ajustaHora((byte)14,(byte)58,(byte)32);
+            System.out.println(clock.getHora());
+
+            clock.avancaMinuto(); // Quando avançado dois minutos, aumenta a hora em 1 e minuto vai para 0;
+            clock.avancaMinuto();
+            System.out.println("Quando avançado dois mintuos: " + clock.getHora());
+
+            clock1.ajustaHora((byte)23,(byte)59,(byte)59);
+            System.out.println(clock1.getHora());
+            
+            clock1.avancaSegundo(); // Quando avança para 24h, será meia-noite;
+            System.out.println("Quando avançado um segundo: " + clock1.getHora());
+
+            System.out.println("No formato pm/am: " + clock.getHoras2());
+            System.out.println();
+        }
+        
+        static void Produto(){
+            Produto mercadoria = new Produto();
+            Produto mercadoria2 = new Produto();
+            
+            mercadoria.setNome("Geladeira");
+            mercadoria.setPreco(832);
+
+            mercadoria2.setNome("Micro-ondas");
+            mercadoria2.setPreco(499);
+
+            System.out.println("O produto " + mercadoria.getNome() + " está custando " + mercadoria.getPreco());
+            System.out.println("O produto " + mercadoria2.getNome() + " está custando " + mercadoria2.getPreco());
+            System.out.println();
+            // Aplicando desconto na geladeira
+            mercadoria.setDesconto(6);
+            System.out.println("Preço do produto " + mercadoria.getNome() +  " aplicando desconto: " + mercadoria.getDesconto());
+            // Aplicando desconto no micro-ondas
+            mercadoria2.setDesconto(12);
+            System.out.println("Preço do produto " + mercadoria2.getNome() +  " aplicando desconto: " + mercadoria2.getDesconto());
+            System.out.println();
+
+            System.out.println(mercadoria.anuncio());
+            System.out.println(mercadoria2.anuncio());
+
+        }   
     public static void main(String[] args) {
 
-        pessoas();
-        lampadas();
-        retangulo();
-
+        //pessoas();
+        //lampadas();
+        //retangulo();
+        //relogio();
+        Produto();
 
 
 
