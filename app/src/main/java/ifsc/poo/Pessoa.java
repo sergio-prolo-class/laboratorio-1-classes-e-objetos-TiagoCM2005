@@ -10,12 +10,12 @@ class Pessoa{
     String nome;
     int idade;
 
-    void Setnome(String nome){
+    void setNome(String nome){
         if(nome != null)
         this.nome = nome;
     }
 
-    String getnome(){
+    String getNome(){
         return this.nome;
     }
 

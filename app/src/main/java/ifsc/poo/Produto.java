@@ -22,15 +22,19 @@ public class Produto {
     }
 
     void setDesconto(int desconto){
-        this.desconto = (int)(this.preco * desconto/100f);
+        this.desconto = this.preco * desconto/100;
     }
 
     int getDesconto(){
-        return (this.preco - this.desconto);
+        return this.desconto;
+    }
+
+    int desconto_aplicado(){
+        return this.preco - this.desconto;
     }
 
     String anuncio(){
-        return this.nome + ": de R$" + this.preco + " por APENAS R$" + getDesconto();
+        return this.nome + ": de R$" + this.preco + " por APENAS R$ " + desconto_aplicado();
     }
 
 }

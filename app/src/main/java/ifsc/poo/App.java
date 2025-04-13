@@ -34,10 +34,10 @@ public class App {
             Pessoa fulano = new Pessoa();
             Pessoa ciclano = new Pessoa();
 
-            fulano.Setnome("Bruno");
+            fulano.setNome("Bruno");
             fulano.setIdade(25);
 
-            ciclano.Setnome("Alice");
+            ciclano.setNome("Alice");
             ciclano.setIdade(22);
 
             for(int i = 0; i < 3; i++){
@@ -113,15 +113,15 @@ public class App {
             mercadoria2.setNome("Micro-ondas");
             mercadoria2.setPreco(499);
 
-            System.out.println("O produto " + mercadoria.getNome() + " está custando " + mercadoria.getPreco());
-            System.out.println("O produto " + mercadoria2.getNome() + " está custando " + mercadoria2.getPreco());
+            System.out.println("O produto " + mercadoria.getNome() + " está custando R$ " + mercadoria.getPreco());
+            System.out.println("O produto " + mercadoria2.getNome() + " está custando R$ " + mercadoria2.getPreco());
             System.out.println();
             // Aplicando desconto na geladeira
             mercadoria.setDesconto(6);
-            System.out.println("Preço do produto " + mercadoria.getNome() +  " aplicando desconto: " + mercadoria.getDesconto());
+            System.out.println("Preço do produto " + mercadoria.getNome() +  " aplicando desconto: " + mercadoria.desconto_aplicado());
             // Aplicando desconto no micro-ondas
             mercadoria2.setDesconto(12);
-            System.out.println("Preço do produto " + mercadoria2.getNome() +  " aplicando desconto: " + mercadoria2.getDesconto());
+            System.out.println("Preço do produto " + mercadoria2.getNome() +  " aplicando desconto: " + mercadoria2.desconto_aplicado());
             System.out.println();
 
             System.out.println(mercadoria.anuncio());
