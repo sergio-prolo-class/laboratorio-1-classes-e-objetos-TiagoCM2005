@@ -12,22 +12,22 @@ Na aplicação principal (App.java), teste sua classe da seguinte forma:
 (d) Imprima a maior razão área sobre perímetro da lista */
 
 class Retangulo {
-    float largura;
-    float altura;
+    private float largura;
+    private float altura;
 
-    void setLargura(float largura){
-        this.largura = largura;
+    public void setLargura(float largura){
+        this.largura = Math.abs(largura);
     }
 
-    void setAltura(float altura){
-        this.altura = altura;
+    public void setAltura(float altura){
+        this.altura = Math.abs(altura);
     }
 
-    float getArea(){
+    public float getArea(){
         return this.largura*altura;
     }
 
-    float getPerimetro(){
+    public float getPerimetro(){
         return (2*(this.altura + this.largura));
     }
 

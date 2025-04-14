@@ -7,12 +7,13 @@ package ifsc.poo;
 (void) felizAniversario() */
 
 class Pessoa{
-    String nome;
-    int idade;
+    private String nome;
+    private int idade;
 
     void setNome(String nome){
-        if(nome != null)
-        this.nome = nome;
+        if(nome != null){
+            this.nome = nome.trim().capitalize();
+        }
     }
 
     String getNome(){

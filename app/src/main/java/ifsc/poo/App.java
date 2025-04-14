@@ -118,10 +118,10 @@ public class App {
             System.out.println();
             // Aplicando desconto na geladeira
             mercadoria.setDesconto(6);
-            System.out.println("Preço do produto " + mercadoria.getNome() +  " aplicando desconto: " + mercadoria.desconto_aplicado());
+            System.out.println("Preço do produto " + mercadoria.getNome() +  " aplicando desconto: " + mercadoria.getPreco());
             // Aplicando desconto no micro-ondas
             mercadoria2.setDesconto(12);
-            System.out.println("Preço do produto " + mercadoria2.getNome() +  " aplicando desconto: " + mercadoria2.desconto_aplicado());
+            System.out.println("Preço do produto " + mercadoria2.getNome() +  " aplicando desconto: " + mercadoria2.getPreco());
             System.out.println();
 
             System.out.println(mercadoria.anuncio());

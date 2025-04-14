@@ -1,40 +1,36 @@
 package ifsc.poo;
 
 public class Produto {
-    String nome;
-    int preco;
-    int desconto;
+    private String nome;
+    private int preco;
+    private int desconto;
 
-    void setNome(String nome){
+    public void setNome(String nome){
         this.nome = nome;
     }
 
-    String getNome(){
+    public String getNome(){
         return this.nome;
     }
 
-    void setPreco(int preco){
+    public void setPreco(int preco){
         this.preco = preco;
     }
 
-    float getPreco(){
-        return (float)this.preco;
+    public float getPreco(){
+        return this.preco - (this.preco * desconto/100.f);
     }
 
-    void setDesconto(int desconto){
-        this.desconto = this.preco * desconto/100;
+    public void setDesconto(int desconto){
+        this.desconto = desconto;
     }
 
-    int getDesconto(){
+    public int getDesconto(){
         return this.desconto;
     }
 
-    int desconto_aplicado(){
-        return this.preco - this.desconto;
-    }
-
-    String anuncio(){
-        return this.nome + ": de R$" + this.preco + " por APENAS R$ " + desconto_aplicado();
+    public String anuncio(){
+        return String.format("%s: de R$ %.02f por APENAS R$ %.02f !", this.nome, (float) (this.preco), (float) (getPreco()));
     }
 
 }

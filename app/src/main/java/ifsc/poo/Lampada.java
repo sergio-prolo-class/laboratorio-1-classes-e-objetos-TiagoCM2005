@@ -1,17 +1,17 @@
 package ifsc.poo;
 
   class Lampada {
-    boolean luz;
+    private boolean luz;
 
-    void light_on(){
+    public void light_on(){
         this.luz = true;
     } 
 
-    void light_off(){
+    public void light_off(){
         this.luz = false;
     }
 
-    boolean verEstado(){
+    public boolean verEstado(){
         return this.luz;
     }
 }
