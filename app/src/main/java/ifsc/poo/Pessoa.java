@@ -10,17 +10,18 @@ class Pessoa{
     private String nome;
     private int idade;
 
-    void setNome(String nome){
+    public void setNome(String nome){
         if(nome != null){
-            this.nome = nome.trim().capitalize();
+            String formatador = nome.trim();
+            this.nome = formatador = formatador.substring(0, 1).toUpperCase() + formatador.substring(1).toLowerCase(); // Deixa o nome no padrão
         }
     }
 
-    String getNome(){
+    public String getNome(){
         return this.nome;
     }
 
-    void setIdade(int idade){
+    public void setIdade(int idade){
         if(idade > 0){
         this.idade = idade;
     } else {
@@ -28,11 +29,11 @@ class Pessoa{
     }
     }
 
-    int getIdade(){
+    public int getIdade(){
         return this.idade;
     }
 
-    void felizAniversario(){
+    public void felizAniversario(){
         this.idade++;
     }
 }

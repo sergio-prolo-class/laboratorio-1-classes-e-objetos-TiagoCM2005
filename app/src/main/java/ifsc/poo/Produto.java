@@ -6,6 +6,7 @@ public class Produto {
     private int desconto;
 
     public void setNome(String nome){
+        if(nome != null)
         this.nome = nome;
     }
 
@@ -14,6 +15,7 @@ public class Produto {
     }
 
     public void setPreco(int preco){
+        if(preco >= 0)
         this.preco = preco;
     }
 
@@ -22,6 +24,7 @@ public class Produto {
     }
 
     public void setDesconto(int desconto){
+        if(desconto >= 0) 
         this.desconto = desconto;
     }
 
