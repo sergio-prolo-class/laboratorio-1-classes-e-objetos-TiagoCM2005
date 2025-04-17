@@ -14,6 +14,9 @@ Na aplicação principal (App.java), teste sua classe da seguinte forma:
 class Retangulo {
     private float largura;
     private float altura;
+    private static float maior_area;
+    private static float menor_perimetro;
+
 
     public void setLargura(float largura){
         this.largura = Math.abs(largura);
@@ -31,5 +34,4 @@ class Retangulo {
         return (2*(this.altura + this.largura));
     }
 
-    
 }

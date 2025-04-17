@@ -6,12 +6,12 @@ package ifsc.poo;
 
     public Lampada(){
         this.luz = false;
-        this.total++;
+        total++;
     }
 
     public Lampada(Boolean estado){
         this.luz = estado;
-        this.total++;
+        total++;
     }
     public void light_on(){
         this.luz = true;
