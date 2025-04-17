@@ -43,24 +43,13 @@ public class App {
         }
 
         static void pessoas(){
-            Pessoa fulano = new Pessoa();
-            Pessoa ciclano = new Pessoa();
+            Pessoa fulano = new Pessoa("125.543.699-17");
+            Pessoa ciclano = new Pessoa("   carlos","111.111.111-11", 15);
+            Pessoa pessego = new Pessoa("Tiago", " ");
 
-            fulano.setNome("Bruno");
-            fulano.setIdade(25);
-
-            ciclano.setNome("Alice");
-            ciclano.setIdade(22);
-
-            for(int i = 0; i < 3; i++){
-            fulano.felizAniversario();
-            }
-
-            System.out.println(fulano.getIdade());
-            
-            System.out.println(ciclano.getIdade());
-
-            // Não é possível colocar um nome vazio ou uma idade negativa, pois foi feito os testes;
+            System.out.println("Nome: " + ciclano.getNome() + " CPF: " + ciclano.getCpf() + " Idade: " + ciclano.getIdade());
+            System.out.println("Nome: " + pessego.getNome() + " CPF: " + pessego.getCpf() + " Idade: " + pessego.getIdade());
+            System.out.println("Nome: " + fulano.getNome() + " CPF: " + fulano.getCpf());
 
         }
         static void retangulo(){
@@ -83,7 +72,7 @@ public class App {
             }
             
             System.out.println("Retangulo fixo");
-            caixa.setLargura(5); 
+            caixa.setLargura(5);
             caixa.setAltura(4);
 
             System.out.println(caixa.getArea()); // área igual a 20
@@ -142,8 +131,8 @@ public class App {
         }   
     public static void main(String[] args) {
 
-        //pessoas();
-        lampadas();
+        pessoas();
+        //lampadas();
         //retangulo();
         //relogio();
         //Produto();
