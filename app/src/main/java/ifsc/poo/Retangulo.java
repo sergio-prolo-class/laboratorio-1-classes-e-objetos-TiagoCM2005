@@ -14,17 +14,31 @@ Na aplicação principal (App.java), teste sua classe da seguinte forma:
 class Retangulo {
     private float largura;
     private float altura;
+    
     private static float maior_area;
     private static float menor_perimetro;
 
+    private static Retangulo ret_maior_area = null;
+    private static Retangulo ret_menor_perimetro = null;
 
-    public void setLargura(float largura){
+    public Retangulo(float largura, float altura){
+        if(largura > 0 && altura > 0){
+            this.largura = largura;
+            this.altura = altura;
+        } else {
+            this.largura = 1;
+            this.altura = 1;
+        }
+        atualizaDados();
+    }
+
+    /* public void setLargura(float largura){
         this.largura = Math.abs(largura);
     }
 
     public void setAltura(float altura){
         this.altura = Math.abs(altura);
-    }
+    } */
 
     public float getArea(){
         return this.largura*altura;
@@ -33,5 +47,33 @@ class Retangulo {
     public float getPerimetro(){
         return (2*(this.altura + this.largura));
     }
+
+    private void atualizaDados(){
+        if(this.getArea() > maior_area){
+            maior_area = this.getArea();
+            ret_maior_area = this;
+        }
+        if(this.getPerimetro() < menor_perimetro){
+            menor_perimetro = this.getPerimetro();
+            ret_menor_perimetro = this;
+        }
+    }
+
+    public static Retangulo getMaiorArea(){ // retorna o retângulo com a maior área
+        return ret_maior_area;
+    }
+
+    public static Retangulo getMenorPerimetro(){ // retorna o retângulo com o menor perímetro
+        return ret_menor_perimetro;
+    }
+
+    public static float getMaiorAreaValor(){ // retorna o valor da maior área
+        return maior_area;
+    }
+
+    public static float getMenorPerimetroValor(){ // retorna o valor do menor perímetro
+        return menor_perimetro;
+    }
+
 
 }

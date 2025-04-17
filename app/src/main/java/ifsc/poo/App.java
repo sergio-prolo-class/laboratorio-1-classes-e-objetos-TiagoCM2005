@@ -3,8 +3,6 @@
  */
 package ifsc.poo;
 
-import java.util.Random;
-
 public class App {
     
     static void lampadas(){
@@ -54,10 +52,10 @@ public class App {
         }
         static void retangulo(){
             int linha = 10;
-            Retangulo caixa = new Retangulo();
-            Retangulo caixao = new Retangulo();
+            Retangulo caixa = new Retangulo(5, 4);
+            Retangulo caixao = new Retangulo(-1, 1);
 
-            Random rnd = new Random();
+            /* Random rnd = new Random();
             int[][] dimensao = new int[linha][2];
 
             for(int i = 0; i < linha; i++){
@@ -69,14 +67,17 @@ public class App {
                 System.out.println("Área: " + caixao.getArea());
                 System.out.println("Perímetro: " + caixao.getPerimetro()); 
                 System.out.println();
-            }
+            } */
             
-            System.out.println("Retangulo fixo");
+            /* System.out.println("Retangulo fixo");
             caixa.setLargura(5);
-            caixa.setAltura(4);
+            caixa.setAltura(4); */
 
             System.out.println(caixa.getArea()); // área igual a 20
             System.out.println(caixa.getPerimetro()); // Perímetro 
+
+            System.out.println("Retângulo com maior área: " + Retangulo.getMaiorArea());
+            System.out.println("Valor da maior área: " + Retangulo.getMaiorAreaValor());
 
            
 
@@ -131,9 +132,9 @@ public class App {
         }   
     public static void main(String[] args) {
 
-        pessoas();
+        //pessoas();
         //lampadas();
-        //retangulo();
+        retangulo();
         //relogio();
         //Produto();
 
