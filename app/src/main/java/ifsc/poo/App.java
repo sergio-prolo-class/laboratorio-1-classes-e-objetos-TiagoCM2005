@@ -10,9 +10,12 @@ public class App {
     static void lampadas(){
         Lampada luz = new Lampada();
         Lampada led = new Lampada();
+        Lampada oled = new Lampada(true); // Já inicia com a Lampada ligada
+
 
         led.light_off();
         luz.light_on();
+
 
 
         boolean led1 = led.verEstado();
@@ -23,11 +26,20 @@ public class App {
         }
         
         boolean lampada = luz.verEstado();
-            if(lampada){
+        if(lampada){
                 System.out.println("Está ligada!");
                 } else{
                 System.out.println("Está desligada!");
             }
+
+        boolean oled1 = oled.verEstado();
+        if(oled1){
+            System.out.println("Está ligada!");
+                } else{
+                System.out.println("Está desligada!");
+        }
+
+        System.out.println(Lampada.verLampadas());
         }
 
         static void pessoas(){
@@ -131,7 +143,7 @@ public class App {
     public static void main(String[] args) {
 
         //pessoas();
-        //lampadas();
+        lampadas();
         //retangulo();
         //relogio();
         //Produto();

@@ -13,7 +13,7 @@ class Pessoa{
     public void setNome(String nome){
         if(nome != null){
             String formatador = nome.trim();
-            this.nome = formatador = formatador.substring(0, 1).toUpperCase() + formatador.substring(1).toLowerCase(); // Deixa o nome no padrão
+            this.nome = formatador.substring(0, 1).toUpperCase() + formatador.substring(1).toLowerCase(); // Deixa o nome no padrão
         }
     }
 
