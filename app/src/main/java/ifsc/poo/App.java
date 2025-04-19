@@ -77,6 +77,7 @@ public class App {
             System.out.println(caixa.getPerimetro()); // Perímetro 
 
             System.out.println("Retângulo com maior área: " + Retangulo.getMaiorArea());
+            System.out.println("Retângulo com menor perímetro: " + Retangulo.getMenorPerimetroValor());
             System.out.println("Valor da maior área: " + Retangulo.getMaiorAreaValor());
 
            
@@ -85,24 +86,16 @@ public class App {
         }
 
         static void relogio(){
-            Relogio clock = new Relogio();
-            Relogio clock1 = new Relogio();
-
-            clock.ajustaHora((byte)14,(byte)58,(byte)32);
+            
+            // =====================CLOCK===========================//
+            Relogio clock = new Relogio((byte)14,(byte)58,(byte)32);
             System.out.println(clock.getHora());
 
-            clock.avancaMinuto(); // Quando avançado dois minutos, aumenta a hora em 1 e minuto vai para 0;
-            clock.avancaMinuto();
-            System.out.println("Quando avançado dois mintuos: " + clock.getHora());
-
-            clock1.ajustaHora((byte)23,(byte)59,(byte)59);
+            // =====================CLOCK2=========================//
+            Relogio clock1 = new Relogio((byte) 15);
             System.out.println(clock1.getHora());
-            
-            clock1.avancaSegundo(); // Quando avança para 24h, será meia-noite;
-            System.out.println("Quando avançado um segundo: " + clock1.getHora());
-
-            System.out.println("No formato pm/am: " + clock.getHoras2());
-            System.out.println();
+ 
+            clock.diferencia(clock1);
         }
         
         static void Produto(){
@@ -134,8 +127,8 @@ public class App {
 
         //pessoas();
         //lampadas();
-        retangulo();
-        //relogio();
+        //retangulo();
+        relogio();
         //Produto();
 
 
