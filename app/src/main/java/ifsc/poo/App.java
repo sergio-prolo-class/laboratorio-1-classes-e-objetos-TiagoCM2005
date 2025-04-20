@@ -99,28 +99,32 @@ public class App {
         }
         
         static void Produto(){
-            Produto mercadoria = new Produto();
-            Produto mercadoria2 = new Produto();
             
-            mercadoria.setNome("Geladeira");
-            mercadoria.setPreco(832);
-
-            mercadoria2.setNome("Micro-ondas");
-            mercadoria2.setPreco(499);
-
+            //=========================Mercadoria 1 =======================//
+            Produto mercadoria = new Produto("Geladeira",799);
+            System.out.println("//=========================Mercadoria 1 =======================//");
             System.out.println("O produto " + mercadoria.getNome() + " está custando R$ " + mercadoria.getPreco());
+            System.out.println("Valor do desconto: " + mercadoria.getDesconto());
+            System.out.println("Preço do produto " + mercadoria.getNome() +  " aplicando desconto: " + mercadoria.getPreco());
+            System.out.println(mercadoria.anuncio());
+            System.out.println(mercadoria.getCodigo());
+            System.out.println();
+
+            //=========================Mercadoria 1 =======================//
+            Produto mercadoria2 = new Produto("microondas", 599);
+            System.out.println("//=========================Mercadoria 2=======================//");
+
+            System.out.println("Valor do desconto: " + mercadoria2.getDesconto());
             System.out.println("O produto " + mercadoria2.getNome() + " está custando R$ " + mercadoria2.getPreco());
             System.out.println();
-            // Aplicando desconto na geladeira
-            mercadoria.setDesconto(6);
-            System.out.println("Preço do produto " + mercadoria.getNome() +  " aplicando desconto: " + mercadoria.getPreco());
-            // Aplicando desconto no micro-ondas
+            
             mercadoria2.setDesconto(12);
             System.out.println("Preço do produto " + mercadoria2.getNome() +  " aplicando desconto: " + mercadoria2.getPreco());
             System.out.println();
-
-            System.out.println(mercadoria.anuncio());
             System.out.println(mercadoria2.anuncio());
+            System.out.println(mercadoria2.getCodigo());
+
+            System.out.println(Produto.getUltimosProdutos());
 
         }   
     public static void main(String[] args) {
@@ -128,8 +132,8 @@ public class App {
         //pessoas();
         //lampadas();
         //retangulo();
-        relogio();
-        //Produto();
+        //relogio();
+        Produto();
 
 
 
