@@ -17,7 +17,24 @@ public class Produto {
         total++;
         this.codigo = gerarCodigo(total);
         ultimosProdutos.add(this); // adiciona todo produto novo no array
+
+        if(ultimosProdutos.size() > 50){
+            ultimosProdutos.remove(0);
+        }
     } 
+
+    public static String[] CSV(){
+        ArrayList<String> csv = new ArrayList<>();
+
+        csv.add("Código;Nome;Preço;Desconto");
+
+        for(int i = 0; i < ultimosProdutos.size(); i++){
+            Produto p = ultimosProdutos.get(i);
+
+            String linha = String.format("%s;%s;%.2f;%d", p.getCodigo(), p.getNome(), p.getPreco(), p.getDesconto());
+        }
+        csv.add(linha);
+    }
 
     private String gerarCodigo(int numero){
         return String.format("CD:%03d-%03d", numero/1000, numero%1000); // quando o numero for 3, o resto da divisão vai ser 3 e a divisão por 1000 zero.
