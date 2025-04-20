@@ -4,11 +4,139 @@
 package ifsc.poo;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
+    
+    static void lampadas(){
+        Lampada luz = new Lampada();
+        Lampada led = new Lampada();
+        Lampada oled = new Lampada(true); // Já inicia com a Lampada ligada
+
+
+        led.light_off();
+        luz.light_on();
+
+
+
+        boolean led1 = led.verEstado();
+        if(led1){
+            System.out.println("Está ligada!");
+            } else{
+            System.out.println("Está desligada!");
+        }
+        
+        boolean lampada = luz.verEstado();
+        if(lampada){
+                System.out.println("Está ligada!");
+                } else{
+                System.out.println("Está desligada!");
+            }
+
+        boolean oled1 = oled.verEstado();
+        if(oled1){
+            System.out.println("Está ligada!");
+                } else{
+                System.out.println("Está desligada!");
+        }
+
+        System.out.println(Lampada.verLampadas());
+        }
+
+        static void pessoas(){
+            Pessoa fulano = new Pessoa("125.543.699-17");
+            Pessoa ciclano = new Pessoa("   carlos","111.111.111-11", 15);
+            Pessoa pessego = new Pessoa("Tiago", " ");
+
+            System.out.println("Nome: " + ciclano.getNome() + " CPF: " + ciclano.getCpf() + " Idade: " + ciclano.getIdade());
+            System.out.println("Nome: " + pessego.getNome() + " CPF: " + pessego.getCpf() + " Idade: " + pessego.getIdade());
+            System.out.println("Nome: " + fulano.getNome() + " CPF: " + fulano.getCpf());
+
+        }
+        static void retangulo(){
+            int linha = 10;
+            Retangulo caixa = new Retangulo(5, 4);
+            Retangulo caixao = new Retangulo(-1, 1);
+
+            /* Random rnd = new Random();
+            int[][] dimensao = new int[linha][2];
+
+            for(int i = 0; i < linha; i++){
+                dimensao[i][0] = rnd.nextInt(100) + 1;
+                dimensao[i][1] = rnd.nextInt(100) + 1;
+                caixao.setLargura(dimensao[i][0]); 
+                caixao.setAltura(dimensao[i][1]);
+                System.out.println("Retangulo " + (i + 1));
+                System.out.println("Área: " + caixao.getArea());
+                System.out.println("Perímetro: " + caixao.getPerimetro()); 
+                System.out.println();
+            } */
+            
+            /* System.out.println("Retangulo fixo");
+            caixa.setLargura(5);
+            caixa.setAltura(4); */
+
+            System.out.println(caixa.getArea()); // área igual a 20
+            System.out.println(caixa.getPerimetro()); // Perímetro 
+
+            System.out.println("Retângulo com maior área: " + Retangulo.getMaiorArea());
+            System.out.println("Retângulo com menor perímetro: " + Retangulo.getMenorPerimetroValor());
+            System.out.println("Valor da maior área: " + Retangulo.getMaiorAreaValor());
+
+           
+
+
+        }
+
+        static void relogio(){
+            
+            // =====================CLOCK===========================//
+            Relogio clock = new Relogio((byte)14,(byte)58,(byte)32);
+            System.out.println(clock.getHora());
+
+            // =====================CLOCK2=========================//
+            Relogio clock1 = new Relogio((byte) 15);
+            System.out.println(clock1.getHora());
+ 
+            clock.diferencia(clock1);
+        }
+        
+        static void Produto(){
+            
+            //=========================Mercadoria 1 =======================//
+            Produto mercadoria = new Produto("Geladeira",799);
+            System.out.println("//=========================Mercadoria 1 =======================//");
+            System.out.println("O produto " + mercadoria.getNome() + " está custando R$ " + mercadoria.getPreco());
+            System.out.println("Valor do desconto: " + mercadoria.getDesconto());
+            System.out.println("Preço do produto " + mercadoria.getNome() +  " aplicando desconto: " + mercadoria.getPreco());
+            System.out.println(mercadoria.anuncio());
+            System.out.println(mercadoria.getCodigo());
+            System.out.println();
+
+            //=========================Mercadoria 1 =======================//
+            Produto mercadoria2 = new Produto("microondas", 599);
+            System.out.println("//=========================Mercadoria 2=======================//");
+
+            System.out.println("Valor do desconto: " + mercadoria2.getDesconto());
+            System.out.println("O produto " + mercadoria2.getNome() + " está custando R$ " + mercadoria2.getPreco());
+            System.out.println();
+            
+            mercadoria2.setDesconto(12);
+            System.out.println("Preço do produto " + mercadoria2.getNome() +  " aplicando desconto: " + mercadoria2.getPreco());
+            System.out.println();
+            System.out.println(mercadoria2.anuncio());
+            System.out.println(mercadoria2.getCodigo());
+
+            System.out.println(Produto.getUltimosProdutos());
+
+        }   
+    public static void main(String[] args) {
+
+        //pessoas();
+        //lampadas();
+        //retangulo();
+        //relogio();
+        Produto();
+
+
+
+        }
     }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
-    }
-}
